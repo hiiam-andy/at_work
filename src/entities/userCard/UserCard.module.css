@@ -1,0 +1,18 @@
+.card{
+  display: flex;
+  border: 1px solid gray;
+  padding: 24px;
+  max-width: 360px;
+  max-height: 168px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+
+.card_image{
+  max-width: 120px;
+  max-height: 112px;
+  margin-right: 20px;
+}
+
+.card_content{
+}

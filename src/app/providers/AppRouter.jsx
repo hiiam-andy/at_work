@@ -8,7 +8,7 @@ export default function AppRouter() {
     <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="/:id" element={<OneUserPage />} />
-      <Route path='/task' element={<TaskPage/>}/>
+      <Route path="/task" element={<TaskPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

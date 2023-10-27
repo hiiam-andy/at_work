@@ -1,18 +1,32 @@
 .card{
   display: flex;
-  border: 1px solid gray;
   padding: 24px;
-  max-width: 360px;
+  /* max-width: 360px; */
   max-height: 168px;
   margin-bottom: 32px;
-  overflow: hidden;
+  border:none;
+  border-radius: 16px;
+  background-color: #fdfdfd;
 }
 
 .card_image{
-  max-width: 120px;
-  max-height: 112px;
+  width: 112px;
+  height: 120px;
   margin-right: 20px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.card_content{
+  width: 100%;
+}
+.name_dropdown_section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.card_content{
+@media(max-width:700px){
+  .card{
+    flex-direction: column;
+  }
 }

@@ -1,5 +1,13 @@
+.header{
+  background-color: #fdfdfd;
+}
 .header_wrapper{
   display: flex;
   justify-content: space-between;
-
+  align-items: center;
+}
+.header_avatar{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }

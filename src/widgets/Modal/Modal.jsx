@@ -5,17 +5,17 @@ import { setIsActiveModal } from "../../app/store/modalSlice";
 
 export default function Modal(props) {
   const dispatch = useDispatch();
-  const { isActive } = useSelector((store) => store.modal);
+  const { isActiveModal } = useSelector((store) => store.modal);
 
-  useEffect(() => {
-    if (!isActive) {
-      setTimeout(() => dispatch(setIsActiveModal(false), 4000));
-    }
-  }, [dispatch, isActive]);
+  // useEffect(() => {
+  //   if (isActiveModal) {
+  //     setTimeout(() => dispatch(setIsActiveModal(false), 4000));
+  //   }
+  // }, [dispatch, isActiveModal]);
 
   return (
     <div
-      className={`${styles.modal} ${isActive && styles.active}`}
+      className={`${styles.modal} ${isActiveModal && styles.active}`}
       onClick={(e) => {
         dispatch(setIsActiveModal(false));
       }}

@@ -4,14 +4,14 @@
   display: flex;
   width: 0;
   border-radius: 12px;
-  background-color: #fdfdfd;
+  background-color: var(--color06);
   z-index: 2;
   transition: width 0.3s;
 }
 .dropdown_wrapper.active{
   width: 180px;
   padding: 16px 20px 16px 20px;
-  box-shadow: 0 0 10px #595959;
+  box-shadow: 0 0 10px var(--color02);
 }
 .dropdown{
   width:0%;
@@ -30,7 +30,7 @@
   margin-bottom: 24px;
 }
 .dropdown_item:hover{
-  color:#22a0bc;
+  color:var(--color-accent)
 }
 
 @media(max-width:740px){

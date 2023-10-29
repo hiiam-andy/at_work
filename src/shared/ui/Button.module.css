@@ -4,12 +4,12 @@
   font-weight: 600;
   font-size: 16px;
   border-radius: 50px;
-  background-color: #161616;
-  color: #fdfdfd;
+  background-color: var(--color01);
+  color: var(--color06);
   cursor: pointer;
   transition: all .2s;
 }
 .button:hover{
-background-color: #f4f4f4;
-color: #595959
+background-color: var(--color05);
+color: var(--color02)
 }

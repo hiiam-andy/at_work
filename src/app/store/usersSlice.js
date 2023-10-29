@@ -2,6 +2,17 @@ import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { BASE_URL } from "../../shared/constants/constants";
 
+// const userData = [
+//   {
+//     name: "",
+//     nickname: "",
+//     email: "",
+//     city: "",
+//     phone: "",
+//     company: "",
+//   },
+// ];
+
 export const fetchUsers = createAsyncThunk("users/getUsers", async () => {
   try {
     const res = await axios(`${BASE_URL}/users`);
@@ -38,6 +49,9 @@ const usersSlice = createSlice({
     removeCard: (state, action) => {
       state.data = state.data.filter((el) => el.id !== action.payload);
     },
+    editData: (state, action) => {
+      state.data = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -57,7 +71,12 @@ const usersSlice = createSlice({
   },
 });
 
-export const { setIsArchived, setIsActive, setArchivedArray, removeCard } =
-  usersSlice.actions;
+export const {
+  setIsArchived,
+  setIsActive,
+  setArchivedArray,
+  removeCard,
+  editData,
+} = usersSlice.actions;
 
 export default usersSlice.reducer;

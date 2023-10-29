@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Sidebar.module.css";
-import { Link, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 export default function Sidebar({ avatar }) {
   const { id } = useParams();
@@ -9,44 +9,44 @@ export default function Sidebar({ avatar }) {
       <img src={avatar} alt="ava" className={styles.sidebar_image} />
       <ul>
         <li className={styles.sidebar_item}>
-          <Link
+          <NavLink
             to={`/profile/${String(id)}/form`}
-            className={styles.sidebar_link}
+            className={({ isActive }) =>
+              `${styles.sidebar_link} ${isActive && styles.active}`
+            }
           >
             Данные профиля
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.sidebar_item}>
-          <Link
+          <NavLink
             to={`/profile/${String(id)}/work`}
-            className={styles.sidebar_link}
+            className={({ isActive }) =>
+              `${styles.sidebar_link} ${isActive && styles.active}`
+            }
           >
             Рабочее пространство
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.sidebar_item}>
-          <Link
+          <NavLink
             to={`/profile/${String(id)}/privacy`}
-            className={styles.sidebar_link}
+            className={({ isActive }) =>
+              `${styles.sidebar_link} ${isActive && styles.active}`
+            }
           >
             Приватность
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.sidebar_item}>
-          <Link
+          <NavLink
             to={`/profile/${String(id)}/safety`}
-            className={styles.sidebar_link}
+            className={({ isActive }) =>
+              `${styles.sidebar_link} ${isActive && styles.active}`
+            }
           >
             Безопасность
-          </Link>
-        </li>
-        <li className={styles.sidebar_item}>
-          <Link
-            to={`/profile/${String(id)}/task`}
-            className={styles.sidebar_link}
-          >
-            Задание
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </div>

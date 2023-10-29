@@ -4,7 +4,7 @@
   max-height: 168px;
   border:none;
   border-radius: 16px;
-  background-color: #fdfdfd;
+  background-color: var(--color06);
   transition: all 0.2s;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .card:hover .name {
-  color: #22a0bc
+  color: var(--color-accent)
 }
 
 .card_image {
@@ -33,7 +33,7 @@
 }
 
 .content_text {
-  color: #9c9c9c;
+  color: var(--color03);
   cursor: default;
 }
 .content_text.name {
@@ -52,7 +52,6 @@
   font-size: 14px;  
 }
 
-
 .name_dropdown_section {
   position: relative;
   display: flex;
@@ -67,6 +66,9 @@
   padding: 6px 10px;
   cursor: pointer;
   z-index: 5;
+}
+.dropdown_btn:hover svg path {
+  fill: var(--color-accent)
 }
 
 @media(max-width:740px) {

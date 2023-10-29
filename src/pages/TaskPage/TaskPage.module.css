@@ -1,3 +1,11 @@
+.task_page{
+  margin: 15px auto 0;
+  padding: 30px ;
+  max-width: 700px;
+  background-color: var(--color06);
+  border-radius: 16px;
+
+}
 .taskPage_section{
   display: flex;
   justify-content: center;

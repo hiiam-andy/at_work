@@ -8,7 +8,10 @@
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 24px;
-  color: #595959;
+  color: var(--color02);
+}
+.back_link svg{
+  margin-right: 15px;
 }
 @media(max-width:740px){
   .oneuser_page{
@@ -17,5 +20,11 @@
   .back_link{
     font-size: 16px;
     margin-bottom: 21px;
+  }
+  .back_link svg{
+    margin-right: 14px;
+  }
+  .back_link svg path:first-child{
+    display: none;
   }
 }

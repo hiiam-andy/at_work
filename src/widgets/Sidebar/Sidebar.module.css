@@ -3,7 +3,7 @@
   padding: 40px;
   margin-right: 40px;
   border-radius: 16px;
-  background-color: #fdfdfd;
+  background-color: var(--color06);
 }
 .sidebar_image{
   width: 100%;
@@ -21,13 +21,13 @@
 }
 .sidebar_item:not(:first-child){
   margin-top: 24px;
-  color:#9c9c9c
+  color:var(--color01)
 }
 .sidebar_link{
-  color:inherit
+  color: var(--color03)
 }
 .sidebar_link.active {
-  color: #161616
+  color: var(--color01)
 }
 
 @media(max-width:740px){

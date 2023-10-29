@@ -88,8 +88,10 @@ export default function Header() {
               </svg>
             </div>
             <div className={styles.ava_nick}>
-              <img src={Avatar} alt="ava" className={styles.header_avatar} />
-              <span className={styles.header_nick}>ник</span>
+              <NavLink to={"/task"} className={styles.header_link}>
+                <img src={Avatar} alt="ava" className={styles.header_avatar} />
+                <span className={styles.header_nick}>Some nickname</span>
+              </NavLink>
             </div>
           </div>
         </div>

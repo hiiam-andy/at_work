@@ -3,7 +3,7 @@ import styles from "./TaskPage.module.css";
 
 export default function TaskPage() {
   return (
-    <section className="profile_container">
+    <section className={styles.task_page}>
       <p className={styles.task_text}>
         В данном тестовом задании для AT-WORK необходимо было реализовать
         двухстраничное приложение для отображения карточкек c информацией о
@@ -22,12 +22,17 @@ export default function TaskPage() {
         <br />
         Скрытие: удаляет карточку
       </p>
+
       <p className={styles.task_text}>
-        <br />
-        Карточку из архива можно сделать активной,
-        <br /> Во время загрузки отобразить сообщение об этом, <br />
+        Карточку из архива можно сделать активной
+      </p>
+      <p className={styles.task_text}>
+        Во время загрузки отобразить сообщение об этом
+      </p>
+      <p className={styles.task_text}>
         Данные могут сбрасываться после перезагрузки
       </p>
+
       <p className={styles.task_text}>
         Страница редактирования должна содержать: Name, Username, Email, City,
         Phone, Company Name, произвольную аватарку
@@ -45,13 +50,20 @@ export default function TaskPage() {
         появляться попап, который выключается по нажатию на крестик или
         автоматически через 4 секунды
       </p>
+      <p className={styles.task_text}>Использованные технологии:</p>
+      <ul>
+        <li>
+          язык: <b>JavaScript</b>
+        </li>
+        <li>
+          фреймворк: <b>React (create-react-app)</b>
+        </li>
+        <li>
+          стейт менеджер: <b>Redux Toolkit</b>
+        </li>
+      </ul>
+      <br />
       <p className={styles.task_text}>
-        Использованные технологии:
-        <ul>
-          <li>язык: JavaScript</li>
-          <li>фреймворк: React (create-react-app)</li>
-          <li>стейт менеджер: Redux Toolkit</li>
-        </ul>
         Реультатом ожидается ссылка на репозиторий и деплой на любой сервис
       </p>
     </section>

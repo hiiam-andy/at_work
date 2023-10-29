@@ -21,8 +21,8 @@ export default function UserList() {
       key={user.id}
       id={user.id}
       name={user.name}
-      city={user?.address?.city}
-      companyName={user?.company?.name}
+      city={user?.address?.city ?? user?.address}
+      companyName={user?.company?.name ?? user?.company}
       image={Avatar}
     />
   ));
@@ -31,8 +31,8 @@ export default function UserList() {
       key={user.id}
       id={user.id}
       name={user.name}
-      city={user?.address?.city}
-      companyName={user?.company?.name}
+      city={user?.address?.city ?? user?.address}
+      companyName={user?.company?.name ?? user?.company}
       image={Avatar}
       isArchived={isArchived}
     />

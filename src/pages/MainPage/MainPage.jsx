@@ -3,8 +3,8 @@ import UserList from "../../entities/userList/UserList";
 
 export default function MainPage() {
   return (
-    <div className="container">
+    <section className="container">
       <UserList />
-    </div>
+    </section>
   );
 }

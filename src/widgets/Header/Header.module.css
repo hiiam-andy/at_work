@@ -1,5 +1,5 @@
 .header{
-  background-color: #fdfdfd;
+  background-color: var(--color06);
 }
 .header_wrapper{
   display: flex;
@@ -11,7 +11,11 @@
 display: flex;
 align-items: center;
 justify-content: space-between;
-
+}
+.header_link{
+  display: flex;
+  align-items: center;
+  color: var(--color02);
 }
 .favorites_notification{
   margin-right: 25px;
@@ -23,8 +27,8 @@ justify-content: space-between;
   margin-right: 15px;
 }
 .ava_nick{
-  display: flex;
-align-items: center;
+  font-weight: 500;
+  font-size: 16px;
 }
 .header_avatar{
   width: 20px;

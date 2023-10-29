@@ -5,7 +5,7 @@ import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 import ProfileForm from "../../widgets/ProfileForm/ProfileForm";
 import WorkSpace from "../../pages/ProfilePage/subPages/workSpace/WorkSpace";
 import Privacy from "../../pages/ProfilePage/subPages/privacy/Privacy";
-import TaskPage from "../../pages/ProfilePage/subPages/TaskPage/TaskPage";
+import TaskPage from "../../pages/TaskPage/TaskPage";
 
 export const AppRouter = () => (
   <Routes>
@@ -15,7 +15,7 @@ export const AppRouter = () => (
       <Route path="work" element={<WorkSpace />} />
       <Route path="privacy" element={<Privacy />} />
       <Route path="safety" element={<WorkSpace />} />
-      <Route path="task" element={<TaskPage />} />
     </Route>
+    <Route path="/task" element={<TaskPage />} />
   </Routes>
 );

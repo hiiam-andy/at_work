@@ -1,13 +1,20 @@
 import React from "react";
-import styles from "./ProfileForm.module.css";
-import Button from "../../shared/ui/Button";
+
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setIsActive } from "../../app/store/modalSlice";
+
+import Modal from "../Modal/Modal";
+import Button from "../../shared/ui/Button";
+
+import styles from "./ProfileForm.module.css";
 
 export default function ProfileForm() {
+  const dispatch = useDispatch();
   const id = useParams();
-  console.log(id);
+
   return (
-    <div className={styles.form_wrapper}>
+    <div className="profile_container">
       <h1 className={styles.form_heading}>Данные профиля</h1>
       <form className={styles.form}>
         <p className={styles.form_item}>
@@ -62,7 +69,14 @@ export default function ProfileForm() {
           />
         </p>
       </form>
-      <Button onClick={(e) => e.preventDefault()}>Сохранить</Button>
+      <Button
+        onClick={(e) => {
+          dispatch(setIsActive(true));
+        }}
+      >
+        Сохранить
+      </Button>
+      <Modal>Изменения сохранены!</Modal>
     </div>
   );
 }

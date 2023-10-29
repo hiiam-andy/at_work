@@ -2,11 +2,21 @@ import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { BASE_URL } from "../../shared/constants/constants";
 
+const userData = {
+  name: "",
+  nickname: "",
+  email: "",
+  city: "",
+  phone: "",
+  company: "",
+};
+
 export const fetchOneUser = createAsyncThunk(
   "oneUser/getOneUsers",
   async (id) => {
     try {
       const res = await axios(`${BASE_URL}/users/${id}`);
+      console.log(res.data);
       return res.data;
     } catch (err) {
       console.log(err);
@@ -19,9 +29,13 @@ const oneUserSlice = createSlice({
   initialState: {
     data: [],
     isLoading: false,
-    isArchived: false,
+    userData,
   },
-  reducers: {},
+  reducers: {
+    editUser: (state, action) => {
+      state.userData = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchOneUser.pending, (state) => {

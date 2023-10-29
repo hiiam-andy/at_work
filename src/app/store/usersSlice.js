@@ -5,7 +5,8 @@ import { BASE_URL } from "../../shared/constants/constants";
 export const fetchUsers = createAsyncThunk("users/getUsers", async () => {
   try {
     const res = await axios(`${BASE_URL}/users`);
-    return res.data;
+    const amount = res.data.filter((_, i) => i < 6);
+    return amount;
   } catch (err) {
     console.log(err);
   }
@@ -16,15 +17,37 @@ const usersSlice = createSlice({
   initialState: {
     data: [],
     isLoading: false,
-    currentUser: [],
+    archivedArray: [],
+    isArchived: [],
+    isActive: [],
   },
-  reducers: {},
+  reducers: {
+    setArchivedArray: (state, action) => {
+      state.archivedArray = action.payload;
+    },
+    setIsArchived: (state, action) => {
+      state.isArchived = state.data.filter((el) => {
+        return action.payload.includes(el.id);
+      });
+    },
+    setIsActive: (state, action) => {
+      state.isActive = state.data.filter((el) => {
+        return !action.payload.includes(el.id);
+      });
+    },
+    removeCard: (state, action) => {
+      state.data = state.data.filter((el) => el.id !== action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchUsers.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(fetchUsers.fulfilled, (state, action) => {
+        if (state.isActive.length === 0) {
+          state.isActive = action.payload;
+        }
         state.data = action.payload;
         state.isLoading = false;
       })
@@ -33,5 +56,8 @@ const usersSlice = createSlice({
       });
   },
 });
+
+export const { setIsArchived, setIsActive, setArchivedArray, removeCard } =
+  usersSlice.actions;
 
 export default usersSlice.reducer;

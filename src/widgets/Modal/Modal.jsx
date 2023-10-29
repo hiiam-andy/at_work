@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./Modal.module.css";
+import { setIsActive } from "../../app/store/modalSlice";
 
 export default function Modal(props) {
-  const [visible, setVisible] = useState(false);
+  const dispatch = useDispatch();
+  const { isActive } = useSelector((store) => store.modal);
 
   useEffect(() => {
-    if (visible) {
-      setTimeout(() => setVisible(false), 4000);
+    if (!isActive) {
+      setTimeout(() => dispatch(setIsActive(false), 4000));
     }
-  }, [visible]);
+  }, [dispatch, isActive]);
 
   return (
     <div
-      className={`${styles.modal} ${visible && styles.active}`}
-      onClick={() => setVisible(false)}
+      className={`${styles.modal} ${isActive && styles.active}`}
+      onClick={(e) => {
+        dispatch(setIsActive(false));
+      }}
     >
       <div className={styles.modal_content}>{props.children}</div>
     </div>

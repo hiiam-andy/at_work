@@ -1,0 +1,21 @@
+.oneuser_page{
+  display: flex;
+}
+.back_link{
+  display: flex;
+  align-items: center;
+  height: 68px;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 24px;
+  color: #595959;
+}
+@media(max-width:740px){
+  .oneuser_page{
+  flex-direction: column;
+  }
+  .back_link{
+    font-size: 16px;
+    margin-bottom: 21px;
+  }
+}

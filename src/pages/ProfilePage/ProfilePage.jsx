@@ -1,12 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchOneUser } from "../../app/store/oneUserSlice";
-import { useParams } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import Sidebar from "../../widgets/Sidebar/Sidebar";
-import ProfileForm from "../../widgets/ProfileForm/ProfileForm";
-import styles from "./OneUserPage.module.css";
+import mockAvatarFromServer from "../../shared/assets/images/maxresdefault.jpg";
+import styles from "./ProfilePage.module.css";
 
-export default function OneUserPage() {
+export default function ProfilePage() {
   const { id } = useParams();
   const { isLoading } = useSelector((store) => store.oneUser);
   const dispatch = useDispatch();
@@ -14,14 +20,18 @@ export default function OneUserPage() {
   useEffect(() => {
     dispatch(fetchOneUser(id));
   }, [dispatch, id]);
+
   return (
     <div className="container">
+      <NavLink className={styles.back_link} to="/">
+        Назад
+      </NavLink>
       {isLoading ? (
         <div>Загрузка...</div>
       ) : (
-        <div style={{ display: "flex" }}>
-          <Sidebar />
-          <ProfileForm />
+        <div className={styles.oneuser_page}>
+          <Sidebar avatar={mockAvatarFromServer} />
+          <Outlet />
         </div>
       )}
     </div>

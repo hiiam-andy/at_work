@@ -39,17 +39,20 @@
 .content_text.name {
   font-weight: 600;
   font-size: 20px;
+  line-height: 27px;
   margin-bottom: 4px;
 }
 
 .content_text.company {
   font-weight: 500;
   font-size: 16px;
+  line-height: 22px;
 }
 
 .content_text.city {
   font-weight: 500;
   font-size: 14px;  
+  line-height: 19px;
 }
 
 .name_dropdown_section {

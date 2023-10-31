@@ -36,3 +36,23 @@
   pointer-events:all;
   overflow: hidden;
 }
+.modal_media{
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.modal_close{
+  position: absolute;
+  align-self: flex-end;
+  top: -13px;
+  right: -14px;
+}
+.modal_check{
+  align-self: center;
+  margin-bottom: 20px;
+}
+.modal_props{
+  font-weight: 600;
+  font-size: 20px;
+}

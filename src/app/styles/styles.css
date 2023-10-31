@@ -33,12 +33,13 @@ li {
   margin-right: auto;
   margin-left: auto;
   padding: 40px;
-  width: 99%;
+  width: 67%;
   border-radius: 16px;
   background-color: var(--color06);
 }
 @media(max-width:700px){
   .profile_container{
+    width: 100%;
     padding: 28px;
     margin-bottom: 15px;
   }

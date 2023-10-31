@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchOneUser } from "../../app/store/oneUserSlice";
-import {
-  Link,
-  NavLink,
-  Outlet,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import Sidebar from "../../widgets/Sidebar/Sidebar";
 import mockAvatarFromServer from "../../shared/assets/images/maxresdefault.jpg";
 import styles from "./ProfilePage.module.css";

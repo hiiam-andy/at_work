@@ -3,12 +3,10 @@
   width: 99%;
   border-radius: 16px;
   background-color: var(--color06);
-  margin-bottom: 15px;
 }
 
 .form {
   max-width: 420px;
-  margin-bottom: 32px;
 }
 
 .form_heading {
@@ -22,8 +20,9 @@
 .form_item {
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
+  margin-bottom: 15px;
 }
+
 
 .form_label {
   display: flex;
@@ -33,7 +32,6 @@
   line-height: 24px;
   margin-bottom: 10px;
 }
-
 .form_input {
   height: 42px;
   border: 2px solid #dadada;

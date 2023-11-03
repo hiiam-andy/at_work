@@ -21,6 +21,7 @@ export default function ProfileForm() {
     phone: "",
     company: "",
   });
+  console.log(data);
 
   const editUser = (id, data, newData) => {
     editData(
@@ -47,6 +48,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
+              placeholder={data.name}
               onChange={(e) => setNewData({ ...newData, name: e.target.value })}
             />
           </label>
@@ -57,6 +59,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
+              placeholder={data.username}
               onChange={(e) =>
                 setNewData({ ...newData, username: e.target.value })
               }
@@ -69,6 +72,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="email"
+              placeholder={data.email}
               onChange={(e) =>
                 setNewData({ ...newData, email: e.target.value })
               }
@@ -81,6 +85,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
+              placeholder={data.address?.city}
               onChange={(e) =>
                 setNewData({ ...newData, address: e.target.value })
               }
@@ -93,6 +98,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="tel"
+              placeholder={data.phone}
               onChange={(e) =>
                 setNewData({ ...newData, phone: e.target.value })
               }
@@ -105,6 +111,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
+              placeholder={data.company?.name}
               onChange={(e) =>
                 setNewData({ ...newData, company: e.target.value })
               }

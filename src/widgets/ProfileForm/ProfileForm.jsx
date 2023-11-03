@@ -1,29 +1,40 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsActiveModal } from "../../app/store/modalSlice";
 
+import { setIsActiveModal } from "../../app/store/modalSlice";
+import { editData } from "../../app/store/usersSlice";
+import Modal from "../../shared/ui/Modal/Modal";
 import Button from "../../shared/ui/Button";
 
 import styles from "./ProfileForm.module.css";
-import { editData } from "../../app/store/usersSlice";
-import Modal from "../../shared/ui/Modal/Modal";
 
 export default function ProfileForm() {
   const { data } = useSelector((state) => state.oneUser);
   const allData = useSelector((state) => state.users.data);
   const dispatch = useDispatch();
 
-  const editUser = (id, field, event) => {
-    dispatch(
-      editData(
-        allData.map((user) => {
-          if (user.id === id) {
-            return { ...user, [field]: event.target.value };
+  const [newData, setNewData] = useState({
+    name: "",
+    username: "",
+    email: "",
+    address: "",
+    phone: "",
+    company: "",
+  });
+  console.log(data);
+
+  const editUser = (id, data, newData) => {
+    editData(
+      data.map((el, index) => {
+        if (el.id === id) {
+          for (let keys in newData) {
+            if (el.hasOwnProperty(keys)) {
+              el = { ...el, [keys]: newData[keys] };
+            }
           }
-          return user;
-        })
-      )
+          dispatch(editData({ el, index }));
+        }
+      })
     );
   };
 
@@ -37,7 +48,8 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
-              onChange={(e) => editUser(data.id, "name", e)}
+              placeholder={data.name}
+              onChange={(e) => setNewData({ ...newData, name: e.target.value })}
             />
           </label>
         </p>
@@ -47,7 +59,10 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
-              onChange={(e) => editUser(data.id, "username", e)}
+              placeholder={data.username}
+              onChange={(e) =>
+                setNewData({ ...newData, username: e.target.value })
+              }
             />
           </label>
         </p>
@@ -57,7 +72,10 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="email"
-              onChange={(e) => editUser(data.id, "email", e)}
+              placeholder={data.email}
+              onChange={(e) =>
+                setNewData({ ...newData, email: e.target.value })
+              }
             />
           </label>
         </p>
@@ -67,7 +85,10 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
-              onChange={(e) => editUser(data.id, "address", e)}
+              placeholder={data.address?.city}
+              onChange={(e) =>
+                setNewData({ ...newData, address: e.target.value })
+              }
             />
           </label>
         </p>
@@ -77,7 +98,10 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="tel"
-              onChange={(e) => editUser(data.id, "phone", e)}
+              placeholder={data.phone}
+              onChange={(e) =>
+                setNewData({ ...newData, phone: e.target.value })
+              }
             />
           </label>
         </p>
@@ -87,7 +111,10 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
-              onChange={(e) => editUser(data.id, "company", e)}
+              placeholder={data.company?.name}
+              onChange={(e) =>
+                setNewData({ ...newData, company: e.target.value })
+              }
             />
           </label>
         </p>
@@ -95,6 +122,7 @@ export default function ProfileForm() {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
+            editUser(data.id, allData, newData);
             dispatch(setIsActiveModal(true));
           }}
         >

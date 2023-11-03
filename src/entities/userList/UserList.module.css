@@ -1,6 +1,7 @@
 .user_list{
 display: flex;
 flex-direction: column;
+margin-bottom: 60px;
 }
 .user_list__section{
   margin-top: 40px;

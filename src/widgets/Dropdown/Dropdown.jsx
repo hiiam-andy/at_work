@@ -33,7 +33,10 @@ export default function Dropdown({ id, isArchived, isActive, showDropdown }) {
         ) : (
           <>
             <li
-              onClick={() => navigate(`/profile/${id}/form`)}
+              onClick={(e) => {
+                e.preventDefault();
+                navigate(`/profile/${id}/form`);
+              }}
               className={styles.dropdown_item}
             >
               Редактировать
@@ -46,7 +49,10 @@ export default function Dropdown({ id, isArchived, isActive, showDropdown }) {
             </li>
             <li
               className={styles.dropdown_item}
-              onClick={() => dispatch(removeCard(id))}
+              onClick={(e) => {
+                dispatch(removeCard(id));
+                e.preventDefault();
+              }}
             >
               Скрыть
             </li>

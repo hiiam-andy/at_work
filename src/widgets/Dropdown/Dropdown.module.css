@@ -5,6 +5,7 @@
   width: 0;
   border-radius: 12px;
   background-color: var(--color06);
+ 
   z-index: 2;
   transition: width 0.3s;
 }
@@ -24,6 +25,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
+  color: var(--color01);
   cursor: pointer;
   transition: color 0.2s;
 }

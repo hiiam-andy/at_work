@@ -6,6 +6,7 @@
   border-radius: 16px;
   background-color: var(--color06);
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 .card.archived {
@@ -34,7 +35,6 @@
 
 .content_text {
   color: var(--color03);
-  cursor: default;
 }
 .content_text.name {
   font-weight: 600;
@@ -67,7 +67,6 @@
   display: flex;
   align-items: center;
   padding: 6px 10px;
-  cursor: pointer;
   z-index: 5;
 }
 .dropdown_btn:hover svg path {

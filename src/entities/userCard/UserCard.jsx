@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./UserCard.module.css";
 
 import Dropdown from "../../widgets/Dropdown/Dropdown";
+import { NavLink } from "react-router-dom";
 
 export default function UserCard({
   id,
@@ -18,12 +19,21 @@ export default function UserCard({
   };
 
   return (
-    <div className={`${styles.card} ${isArchived && styles.archived}`}>
+    <NavLink
+      className={`${styles.card} ${isArchived && styles.archived}`}
+      to={`/profile/${String(id)}/work`}
+    >
       <img className={styles.card_image} src={image} alt="avatar" />
       <div className={styles.card_content}>
         <div>
           <div className={styles.name_dropdown_section}>
-            <div className={styles.dropdown_btn} onClick={() => showDropdown()}>
+            <div
+              className={styles.dropdown_btn}
+              onClick={(e) => {
+                showDropdown();
+                e.preventDefault();
+              }}
+            >
               <svg
                 width="4"
                 height="16"
@@ -53,6 +63,6 @@ export default function UserCard({
         </div>
         <div className={`${styles.content_text}  ${styles.city}`}>{city}</div>
       </div>
-    </div>
+    </NavLink>
   );
 }

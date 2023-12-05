@@ -37,6 +37,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
+              placeholder={data.name}
               onChange={(e) => editUser(data.id, "name", e)}
             />
           </label>
@@ -47,6 +48,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
+              placeholder={data.username}
               onChange={(e) => editUser(data.id, "username", e)}
             />
           </label>
@@ -57,6 +59,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="email"
+              placeholder={data.email}
               onChange={(e) => editUser(data.id, "email", e)}
             />
           </label>
@@ -67,6 +70,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
+              placeholder={data.address?.city}
               onChange={(e) => editUser(data.id, "address", e)}
             />
           </label>
@@ -77,6 +81,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="tel"
+              placeholder={data.phone}
               onChange={(e) => editUser(data.id, "phone", e)}
             />
           </label>
@@ -87,6 +92,7 @@ export default function ProfileForm() {
             <input
               className={styles.form_input}
               type="text"
+              placeholder={data.company?.name}
               onChange={(e) => editUser(data.id, "company", e)}
             />
           </label>

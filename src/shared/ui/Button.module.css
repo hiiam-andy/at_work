@@ -1,4 +1,4 @@
-.button{
+.button {
   padding: 12px 42px;
   border: none;
   font-weight: 600;
@@ -7,9 +7,9 @@
   background-color: var(--color01);
   color: var(--color06);
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
 }
-.button:hover{
-background-color: var(--color05);
-color: var(--color02)
+.button:hover {
+  background-color: var(--color05);
+  color: var(--color02);
 }

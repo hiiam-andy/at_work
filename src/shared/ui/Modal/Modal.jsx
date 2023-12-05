@@ -7,23 +7,24 @@ export default function Modal(props) {
   const dispatch = useDispatch();
   const { isActiveModal } = useSelector((store) => store.modal);
 
+  const closeModal = () => {
+    dispatch(setIsActiveModal(false));
+  };
+
   useEffect(() => {
     if (isActiveModal) {
-      setTimeout(() => dispatch(setIsActiveModal(false)), 4000);
+      setTimeout(() => closeModal(), 4000);
     }
+    return clearTimeout;
   }, [dispatch, isActiveModal]);
 
   return (
-    <div
-      className={`${styles.modal} ${isActiveModal && styles.active}`}
-      onClick={(e) => {
-        dispatch(setIsActiveModal(false));
-      }}
-    >
-      <div className={styles.modal_content}>
+    <div className={`${styles.modal} ${isActiveModal && styles.active}`} onClick={closeModal}>
+      <div className={styles.modal_content} onClick={(e) => e.stopPropagation()}>
         <div className={styles.modal_media}>
           <svg
             className={styles.modal_close}
+            onClick={closeModal}
             width="10"
             height="10"
             viewBox="0 0 10 10"

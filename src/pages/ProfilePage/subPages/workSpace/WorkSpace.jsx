@@ -9,14 +9,14 @@ export default function WorkSpace() {
   return (
     <div className="profile_container">
       <h1 className={styles.profile_heading}>{data.username}</h1>
-      {/* <ul className={styles.profile_info}>
+      <ul className={styles.profile_info}>
         <li className={styles.profile_item}>Имя: {data.name}</li>
         <li className={styles.profile_item}>email: {data.email}</li>
         <li className={styles.profile_item}>phone: {data.phone}</li>
         <li className={styles.profile_item}>Компания: {data?.company?.name}</li>
         <li className={styles.profile_item}>Адрес: {data?.address?.city}</li>
       </ul>
-      <NavLink to={`/profile/${data.id}/form`}>
+      {/* <NavLink to={`/profile/${data.id}/form`}>
         <Button>Редактировать данные</Button>
       </NavLink> */}
     </div>

@@ -36,21 +36,26 @@ const usersSlice = createSlice({
     setArchivedArray: (state, action) => {
       state.archivedArray = action.payload;
     },
+
     setIsArchived: (state, action) => {
       state.isArchived = state.data.filter((el) => {
         return action.payload.includes(el.id);
       });
     },
+
     setIsActive: (state, action) => {
       state.isActive = state.data.filter((el) => {
         return !action.payload.includes(el.id);
       });
     },
+
     removeCard: (state, action) => {
       state.data = state.data.filter((el) => el.id !== action.payload);
     },
+
     editData: (state, action) => {
-      state.data = action.payload;
+      const { index, el } = action.payload;
+      state.data.splice(index, 1, el);
     },
   },
   extraReducers: (builder) => {
